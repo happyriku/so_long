@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map_name.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/08 15:10:02 by rishibas          #+#    #+#             */
+/*   Updated: 2024/07/08 19:30:47 by rishibas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 
@@ -11,8 +23,8 @@ void    check_map_name(char *map_name)
                 return ;
             else
             {
-                printf("error\n");
-                return ;
+                ft_printf("error\n");
+                exit(1);
             }
         }
         map_name++;
