@@ -37,12 +37,11 @@ void	check_map_is_surrounded_by_walls(char	**map, t_info *info)
 			}
 			col++;
 		}
-		ft_printf("\n");
 		row++;
 	}
 }
 
-void	map_character_count(char **map, t_info *info)
+void	count_map_character(char **map, t_info *info)
 {
 	int row;
 	int col;
@@ -69,7 +68,7 @@ void	map_character_count(char **map, t_info *info)
 	}
 }
 
-void	check_map_in_map(t_map map)
+void	check_count_in_map(t_info *info)
 {
 	if (info->map_info.item == 0)
 		print_error(info, "No item in the map");
@@ -90,7 +89,7 @@ void	check_map_is_correct(t_info *info, t_list *lst)
 	check_map_is_rectangle(info, lst);
 	ft_lstdelone(&lst, free);
 	check_map_is_surrounded_by_walls(info->map_info.map, info);
-	map_character_count(info->map_info.map, info);
+	count_map_character(info->map_info.map, info);
 	check_count_in_map(info);
 	copy_map = create_map_copy(info);
 	check_map_can_finish(info, info->map_info.map);

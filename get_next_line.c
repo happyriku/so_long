@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:49:33 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/08 19:55:14 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/09 13:56:08 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,10 @@ char	*get_next_line(int fd, t_info *info)
 	char		*read_part;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		print_error(info);
+		print_error(info, "fd is negative or BUFFERSIZE is less than 0");
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
-		print_error(info);
+		print_error(info, "buf is not allocated Memory");
 	read_part = get_next_line_help(save, buf, fd);
 	if (!read_part)
 		return (ft_free(&save, read_part, 0));

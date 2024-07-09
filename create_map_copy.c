@@ -20,6 +20,6 @@ char    **create_map_copy(t_info *info)
         ft_strlcpy(copy_map[i], info->map_info.map[i], info->map_info.width + 1);
         i++;
     }
-    copy_map[i] = '\0';
+    copy_map[i] = NULL;
     return (copy_map);
 }
