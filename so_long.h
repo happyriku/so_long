@@ -24,6 +24,8 @@ typedef struct s_player
 {
 	int item_count;
 	int move_count;
+	int	x;
+	int	y;
 
 } t_player;
 
@@ -32,11 +34,11 @@ typedef struct s_map
 	char		**map;
 	size_t		height;
 	size_t		width;
-	int			item_count;
-	int			exit_count;
-	int			player_count;
-	int			wall_count;
-	int			tile_count;
+	int			item;
+	int			exit;
+	int			player;
+	int			wall;
+	int			tile;
 
 } t_map;
 

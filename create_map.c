@@ -45,7 +45,7 @@ void	make_list_from_map_lines(int fd, t_info *info, t_list **lst)
 		if (check == TYPE_FAILED)
 		{
 			ft_lstclear(lst, free);
-			print_error(info);
+			print_error(info, "Failed to create new node");
 		}
 	}
 }
@@ -58,7 +58,7 @@ char	**create_map_from_list(t_info *info, t_list *lst)
 	if (!map)
 	{
 		ft_lstclear(&lst, free);
-		print_error(info);
+		print_error(info, "Failed to allocate Memory of map");
 	}
 	i = 0;
 	while (lst)
@@ -68,7 +68,7 @@ char	**create_map_from_list(t_info *info, t_list *lst)
 		{
 			ft_lstclear(&lst, free);
 			map_clear(map);
-			print_error(info);
+			print_error(info,"Failed to allocate Memory of map[i]");
 		}
 		ft_strlcpy(map[i], lst->content, ft_strlen(lst->content) + 1);
 		lst = lst->next;
@@ -85,7 +85,7 @@ void    create_map(t_info *info, char *map_name)
 	fd = open(map_name, O_RDONLY);
 	if (fd == TYPE_FAILED)
 	{
-		ft_printf("Error\n");
+		ft_printf("open function is Error\n");
 		return ;
 	}
 	make_list_from_map_lines(fd, info, &lst);
@@ -93,4 +93,5 @@ void    create_map(t_info *info, char *map_name)
 	info->map_info.width = ft_strlen(lst->content);
 	info->map_info.map = create_map_from_list(info, lst);
 	check_map_is_correct(info, lst);
+	close(fd);
 }

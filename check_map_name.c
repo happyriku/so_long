@@ -23,7 +23,7 @@ void    check_map_name(char *map_name)
                 return ;
             else
             {
-                ft_printf("error\n");
+                ft_printf("map name is incorrect\n");
                 exit(1);
             }
         }
