@@ -92,6 +92,6 @@ void	check_map_is_correct(t_info *info, t_list *lst)
 	count_map_character(info->map_info.map, info);
 	check_count_in_map(info);
 	copy_map = create_map_copy(info);
-	check_map_can_finish(info, info->map_info.map);
+	check_map_can_finish(info, copy_map);
 	map_clear(copy_map);
 }

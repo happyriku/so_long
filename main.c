@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:44 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/09 19:34:29 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:49:26 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,11 @@ int main(int argc, char **argv)
     create_map(&info, argv[1]);
     start_mlx(&info);
     set_hooks(&info);
+    mlx_loop((&info)->mlx);
     return (0);
+}
+
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q so_long");
 }

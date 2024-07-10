@@ -41,14 +41,16 @@ void	*get_image_from_info(t_info *info, char c)
 {
 	if (c == 'P')
 		return (info->image_info.player);
-	else if (c == 'E')
+	if (c == 'E')
 		return (info->image_info.exit);
-	else if (c == 'C')
+	if (c == 'C')
 		return (info->image_info.item);
-	else if (c == '0')
+	if (c == '0')
 		return (info->image_info.tile);
-	else if (c == '1')
+	if (c == '1')
 		return (info->image_info.wall);
+	print_error(info, "unknow character in map");
+	return (0);
 }
 
 void	put_image_to_window(t_info *info, char **map)
@@ -67,7 +69,7 @@ void	put_image_to_window(t_info *info, char **map)
 		x = 0;
 		while (x < MAXSCREEN_SIZE && map[page_y + y][page_x + x])
 		{
-			img = get_image_from_info(info, "C");
+			img = get_image_from_info(info, map[page_y + y][page_x + x]);
 			mlx_put_image_to_window(info->mlx, info->window,
 				img, x * PIXEL_BIT, y * PIXEL_BIT);
 			x++;	

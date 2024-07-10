@@ -5,7 +5,7 @@ LIBRARY_LIBFT = libft/libft.a
 LIBRARY_PRINTF = ft_printf/libftprintf.a
 SRCS = main.c check_map_name.c get_next_line.c get_next_line_utils.c map_clear.c print_error.c create_map.c\
 		check_map_is_correct.c create_map_copy.c check_map_can_finish.c explore_map_and_replace_with_Y.c key_press_hook.c\
-		go_to_destination.c check_player_can_goal.c window_close_hook.c
+		go_to_destination.c check_player_can_goal.c window_close_hook.c swap_position.c start_mlx.c info_free.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc
