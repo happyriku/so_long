@@ -63,3 +63,13 @@ void	go_down(char *current_position, char *next_position, t_info *info)
 	else if (*next_position == 'E')
 		check_player_can_goal(info);
 }
+
+void	make_rasengan(int x, int y, t_info *info)
+{
+	info->rasengan_back = info->map_info.map[y][x + 1];
+	info->map_info.map[y][x + 1] = 'R';
+	get_rasengan_position(info->map_info.map, &info->rasengan_x, &info->rasengan_y);
+	put_image_to_window(info, info->map_info.map);
+	swap_position_to_rasengan(info);
+	return ;
+}

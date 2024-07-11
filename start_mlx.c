@@ -17,6 +17,9 @@ void	get_images(t_info *info)
 	info->image_info.wall = mlx_xpm_file_to_image(info->mlx, WALL_IMAGE, &info->image_info.size, &info->image_info.size);
 	if (info->image_info.wall == NULL)
 		print_error(info, "failed to get wall image");
+	info->image_info.rasengan = mlx_xpm_file_to_image(info->mlx, RASENGAN_IMAGE, &info->image_info.size, &info->image_info.size);
+	if (info->image_info.rasengan == NULL)
+		print_error(info, "failed to get rasengan");
 }
 
 void	make_window(t_info *info)
@@ -49,6 +52,8 @@ void	*get_image_from_info(t_info *info, char c)
 		return (info->image_info.tile);
 	if (c == '1')
 		return (info->image_info.wall);
+	if (c == 'R')
+		return (info->image_info.rasengan);
 	print_error(info, "unknow character in map");
 	return (0);
 }
@@ -80,6 +85,8 @@ void	put_image_to_window(t_info *info, char **map)
 
 void    start_mlx(t_info *info)
 {
+	int	i;
+
 	info->mlx = mlx_init();
 	if (info->mlx == NULL)
 		print_error(info, "mlx_init was failed !");

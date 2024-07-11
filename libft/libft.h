@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:32:36 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/09 13:59:50 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/10 21:01:05 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void    ft_lstclear(t_list **lst, void(*del)(void *));
-void    ft_lstdelone(t_list **lst, void(*del)(void *));
+void    ft_lstdelone(t_list *lst, void(*del)(void *));
 
 #endif

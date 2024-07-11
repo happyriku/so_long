@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:44 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/10 19:49:26 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/11 19:44:21 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     return (0);
 }
 
-__attribute__((destructor))
-static void destructor() {
-    system("leaks -q so_long");
-}
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q so_long");
+// }

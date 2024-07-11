@@ -87,7 +87,7 @@ void	check_map_is_correct(t_info *info, t_list *lst)
 	char **copy_map;
 
 	check_map_is_rectangle(info, lst);
-	ft_lstdelone(&lst, free);
+	ft_lstdelone(lst, free);
 	check_map_is_surrounded_by_walls(info->map_info.map, info);
 	count_map_character(info->map_info.map, info);
 	check_count_in_map(info);

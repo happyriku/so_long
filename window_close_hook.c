@@ -2,6 +2,8 @@
 
 int window_close_hook(t_info *info)
 {
+    map_clear(info->map_info.map);
+    info_free(info);
     exit(0);
     return (0);
 }

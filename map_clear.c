@@ -10,5 +10,6 @@ void    map_clear(char **map)
         free(map[i]);
         i++;
     }
+    ft_printf("%p\n", &map);
     free(map);
 }

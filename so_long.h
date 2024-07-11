@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:34 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/10 20:06:46 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:45:51 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_map
 	int			player;
 	int			wall;
 	int			tile;
-
 } t_map;
 
 typedef struct s_image
@@ -50,6 +49,7 @@ typedef struct s_image
 	void	*exit;
 	void	*item;
 	void	*player;
+	void	*rasengan;
 	int		size;
 	
 } t_image;
@@ -61,7 +61,9 @@ typedef struct s_info
 	void	*mlx;
 	void	*window;
 	t_image		image_info;
-
+	size_t	rasengan_x;
+	size_t	rasengan_y;
+	int		rasengan_back;
 } t_info;
  
 typedef enum s_type
@@ -80,18 +82,20 @@ typedef enum s_type
 #  define BUFFER_SIZE 4
 # endif
 
-# define PLAYER_IMAGE "/Users/rishibas/Downloads/pet_hoso_cat-_1_.xpm"
-# define EXIT_IMAGE "/Users/rishibas/Downloads/inugoya-_1_.xpm"
-# define ITEM_IMAGE "/Users/rishibas/Downloads/sweets_taiyaki-_1_.xpm"
+# define PLAYER_IMAGE "/Users/rishibas/Downloads/naruto_shibafu_background-_1_.xpm"
+# define EXIT_IMAGE "/Users/rishibas/Downloads/AnyConv.com__あ扉 (1) (1).xpm"
+# define ITEM_IMAGE "/Users/rishibas/Downloads/AnyConv.com__ramen_top_syouyu (1).xpm"
 # define TILE_IMAGE "/Users/rishibas/Downloads/pattern_shibafu-_1_.xpm"
-# define WALL_IMAGE "/Users/rishibas/Downloads/rengabusu.xpm"
+# define WALL_IMAGE "/Users/rishibas/Downloads/AnyConv.com__rengabusu (1).xpm"
+# define RASENGAN_IMAGE "/Users/rishibas/Downloads/MiConv.com__螺旋丸２.xpm"
 
 # define KEY_W 119
 # define KEY_D 100
 # define KEY_S 115
 # define KEY_A 97
+# define KEY_K 107
 
-# define PIXEL_BIT 20
+# define PIXEL_BIT 50
 # define MAXSCREEN_SIZE 30
 
 # define ESC 65307
@@ -119,5 +123,8 @@ int		window_close_hook(t_info *info);
 int		exposure_hook(t_info *info);
 void    swap_position(t_info *info, char *current_position, char *next_position);
 void    info_free(t_info *info);
+void	make_rasengan(int x, int y, t_info *info);
+void    get_rasengan_position(char **map, size_t *x, size_t *y);
+void    swap_position_to_rasengan(t_info *info);
 
 #endif

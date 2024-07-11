@@ -15,8 +15,11 @@ int key_press_hook(int keycode, t_info *info)
 		go_right(&(info->map_info.map[y][x]), &(info->map_info.map[y][x + 1]), info);
 	else if (keycode == KEY_S)
 		go_down(&(info->map_info.map[y][x]), &(info->map_info.map[y + 1][x]), info);
+	else if (keycode == KEY_K)
+		make_rasengan(x, y, info);
 	else if (keycode == ESC)
 	{
+		info_free(info);
 		map_clear(info->map_info.map);
 		exit(0);
 	}
