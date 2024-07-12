@@ -1,5 +1,14 @@
 #include "so_long.h"
 
+int	key_press_hook_help(t_info *info)
+{
+	get_player_position(info, info->map_info.map);
+	if (info->player_info.x % MAXSCREEN_SIZE == 0 || info->player_info.y % MAXSCREEN_SIZE == 0)
+		mlx_clear_window(info->mlx, info->window);
+	put_image_to_window(info, info->map_info.map);
+	return (0);
+}
+
 int key_press_hook(int keycode, t_info *info)
 {
 	int	x;
@@ -23,9 +32,5 @@ int key_press_hook(int keycode, t_info *info)
 		map_clear(info->map_info.map);
 		exit(0);
 	}
-	get_player_position(info, info->map_info.map);
-	if (info->player_info.x % MAXSCREEN_SIZE == 0 || info->player_info.y % MAXSCREEN_SIZE == 0)
-		mlx_clear_window(info->mlx, info->window);
-	put_image_to_window(info, info->map_info.map);
-	return (0);
+	return (key_press_hook_help(info));
 }

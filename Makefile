@@ -11,7 +11,7 @@ OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Ilibft/libft.h -Ift_printf/ft_printf.h
 
-MLX_PATH = ./minilibx-linux
+MLX_PATH = /Users/rishibas/Downloads/minilibx-linux
 
 MAKE = make
 

@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:34 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/11 20:45:51 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/12 16:00:06 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ typedef enum s_type
 # endif
 
 # define PLAYER_IMAGE "/Users/rishibas/Downloads/naruto_shibafu_background-_1_.xpm"
-# define EXIT_IMAGE "/Users/rishibas/Downloads/AnyConv.com__あ扉 (1) (1).xpm"
+# define EXIT_IMAGE "/Users/rishibas/Downloads/kaidan_down_stone-_1_.xpm"
 # define ITEM_IMAGE "/Users/rishibas/Downloads/AnyConv.com__ramen_top_syouyu (1).xpm"
 # define TILE_IMAGE "/Users/rishibas/Downloads/pattern_shibafu-_1_.xpm"
 # define WALL_IMAGE "/Users/rishibas/Downloads/AnyConv.com__rengabusu (1).xpm"
-# define RASENGAN_IMAGE "/Users/rishibas/Downloads/MiConv.com__螺旋丸２.xpm"
+# define RASENGAN_IMAGE "/Users/rishibas/Downloads/螺旋丸_shibafu.xpm"
 
 # define KEY_W 119
 # define KEY_D 100
