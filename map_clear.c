@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_clear.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/12 19:36:12 by rishibas          #+#    #+#             */
+/*   Updated: 2024/07/14 17:18:53 by rishibas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void    map_clear(char **map)
+void	map_clear(char **map)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (map[i])
-    {
-        free(map[i]);
-        i++;
-    }
-    ft_printf("%p\n", &map);
-    free(map);
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }

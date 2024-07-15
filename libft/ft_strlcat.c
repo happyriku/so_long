@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rishibas <rishibas@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:26:48 by rishibas          #+#    #+#             */
-/*   Updated: 2024/06/03 13:44:56 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/12 20:57:53 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dst_len + ft_strlen(src));
 }
 
-int main()
-{
-    char *dest = NULL;
-    char src[] = "riku";
-    size_t x = 3;
-    size_t result;
-    // result = ft_strlcat(dest, src, x); // strlcat を ft_strlcat に修正する
-    // printf("%s: %zu\n", dest, result);
-    result = strlcat(dest, src, x);
-    printf("%s: %zu\n", dest, result);
-    return 0;
-}
+// int main()
+// {
+//     char *dest = NULL;
+//     char src[] = "riku";
+//     size_t x = 3;
+//     size_t result;
+//     // result = ft_strlcat(dest, src, x); // strlcat を ft_strlcat に修正する
+//     // printf("%s: %zu\n", dest, result);
+//     result = strlcat(dest, src, x);
+//     printf("%s: %zu\n", dest, result);
+//     return 0;
+// }

@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:54 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/11 19:02:25 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/15 20:20:05 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	get_map_lines(int fd, t_info *info, t_list **lst)
 {
-	char    *line;
-	t_list  *new_node;
+	char	*line;
+	t_list	*new_node;
 	int		i;
 
 	line = get_next_line(fd, info);
@@ -25,7 +25,7 @@ int	get_map_lines(int fd, t_info *info, t_list **lst)
 	while (line[i] && line[i] != '\n')
 		i++;
 	line[i] = '\0';
-    new_node = ft_lstnew(line);
+	new_node = ft_lstnew(line);
 	if (!new_node)
 		return (TYPE_FAILED);
 	ft_lstadd_back(lst, new_node);
@@ -34,7 +34,7 @@ int	get_map_lines(int fd, t_info *info, t_list **lst)
 
 void	make_list_from_map_lines(int fd, t_info *info, t_list **lst)
 {
-	int check;
+	int	check;
 
 	check = TYPE_SUCESS;
 	while (check == TYPE_SUCESS)
@@ -49,6 +49,7 @@ void	make_list_from_map_lines(int fd, t_info *info, t_list **lst)
 		}
 	}
 }
+
 char	**create_map_from_list(t_info *info, t_list *lst)
 {
 	int		i;
@@ -68,7 +69,7 @@ char	**create_map_from_list(t_info *info, t_list *lst)
 		{
 			ft_lstclear(&lst, free);
 			map_clear(map);
-			print_error(info,"Failed to allocate Memory of map[i]");
+			print_error(info, "Failed to allocate Memory of map[i]");
 		}
 		ft_strlcpy(map[i], lst->content, ft_strlen(lst->content) + 1);
 		lst = lst->next;
@@ -77,11 +78,21 @@ char	**create_map_from_list(t_info *info, t_list *lst)
 	return (map);
 }
 
-void    create_map(t_info *info, char *map_name)
+void	check_map_is_empty(t_list *lst)
+{
+	if (lst == NULL)
+	{
+		ft_printf("empty map\n");
+		exit(1);
+	}
+}
+
+void	create_map(t_info *info, char *map_name)
 {
 	int		fd;
-	t_list	*lst = NULL;
+	t_list	*lst;
 
+	lst = NULL;
 	fd = open(map_name, O_RDONLY);
 	if (fd == TYPE_FAILED)
 	{
@@ -89,7 +100,13 @@ void    create_map(t_info *info, char *map_name)
 		return ;
 	}
 	make_list_from_map_lines(fd, info, &lst);
+	check_map_is_empty(lst);
 	info->map_info.height = ft_lstsize(lst);
+	if (info->map_info.height >= 89)
+	{
+		ft_printf("The map is too big\n");
+		exit(1);
+	}
 	info->map_info.width = ft_strlen(lst->content);
 	info->map_info.map = create_map_from_list(info, lst);
 	check_map_is_correct(info, lst);

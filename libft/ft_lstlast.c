@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/12 20:58:58 by rishibas          #+#    #+#             */
+/*   Updated: 2024/07/12 20:59:06 by rishibas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (NULL);
+	if (!lst)
+		return (NULL);
 	while (lst->next != '\0')
 		lst = lst->next;
 	return (lst);

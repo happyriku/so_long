@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/12 20:58:21 by rishibas          #+#    #+#             */
+/*   Updated: 2024/07/12 20:58:27 by rishibas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstnew(void	*content)
 {
-	struct s_list *lst;
+	struct s_list	*lst;
 
 	lst = (struct s_list *)malloc(sizeof(struct s_list));
 	if (!lst)

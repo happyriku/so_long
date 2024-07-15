@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rishibas <rishibas@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:41:51 by rishibas          #+#    #+#             */
-/*   Updated: 2024/05/13 19:12:07 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/14 14:47:45 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_itoa(int n)
 
 // int main(void)
 // {
-//     //printf("itoa : %s\n", ft_itoa(-2147483648));
-//     printf("itoa : %s\n", ft_itoa(-21));
+//     printf("itoa : %s\n", ft_itoa(-2147483648));
+//     // printf("itoa : %s\n", ft_itoa(-21));
 //     return (0);
 // }

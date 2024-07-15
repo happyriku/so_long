@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map_is_correct.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/12 20:24:12 by rishibas          #+#    #+#             */
+/*   Updated: 2024/07/14 19:33:02 by rishibas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	check_map_is_rectangle(t_info *info, t_list *lst)
@@ -20,8 +32,8 @@ void	check_map_is_rectangle(t_info *info, t_list *lst)
 
 void	check_map_is_surrounded_by_walls(char	**map, t_info *info)
 {
-	int	row;
-	int	col;
+	size_t	row;
+	size_t	col;
 
 	row = 0;
 	while (map[row] != '\0')
@@ -43,8 +55,8 @@ void	check_map_is_surrounded_by_walls(char	**map, t_info *info)
 
 void	count_map_character(char **map, t_info *info)
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 
 	row = 0;
 	while (map[row])
@@ -84,7 +96,7 @@ void	check_count_in_map(t_info *info)
 
 void	check_map_is_correct(t_info *info, t_list *lst)
 {
-	char **copy_map;
+	char	**copy_map;
 
 	check_map_is_rectangle(info, lst);
 	ft_lstdelone(lst, free);
