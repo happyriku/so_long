@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:10:02 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/15 18:33:34 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/17 20:17:57 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_map_name(char *map_name)
 	{
 		if (*map_name == '.')
 		{
-			if (strncmp(map_name, ".ber\0", 5) == 0)
+			if (ft_strncmp(map_name, ".ber\0", 5) == 0)
 				return ;
 		}
 		map_name++;

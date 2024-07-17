@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:34 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/14 19:36:13 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/17 19:23:30 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ typedef enum s_type
 # define KEY_K 107
 
 # define PIXEL_BIT 50
-# define MAXSCREEN_SIZE 30
+# define MAXSCREEN_SIZE 25
 
 # define ESC 65307
 

@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 20:24:12 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/14 19:33:02 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:36:54 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_map_is_surrounded_by_walls(char	**map, t_info *info)
 	size_t	col;
 
 	row = 0;
-	while (map[row] != '\0')
+	while (map[row] != NULL)
 	{
 		col = 0;
 		while (map[row][col] != '\0')
