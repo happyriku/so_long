@@ -38,7 +38,7 @@ clean:
 	$(MAKE) -C ./ft_printf fclean
 	$(MAKE) -C ./libft fclean
 
-fclean:
+fclean: clean
 	$(RM) $(NAME) $(OBJS)
 	$(MAKE) -C ./ft_printf fclean
 	$(MAKE) -C ./libft fclean

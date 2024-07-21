@@ -10,8 +10,8 @@ OBJS = $(SRCS:.c=.o)
 BONUS = $(BONUS_SRCS:.c=.o)
 
 CC = cc
-CFLAG = -Wall -Wextra -Werror
-CPPFLAGS = -I.
+CFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Ilibft.h
 RM = rm -f
 
 $(NAME):$(OBJS)
@@ -28,7 +28,7 @@ bonus:$(OBJS) $(BONUS_OBJS)
 		ranlib $(NAME)
 
 .c.o:
-	$(CC) $(CFLAG) $(CPPFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
 	$(RM) $(OBJS)

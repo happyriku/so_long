@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:49:33 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/15 18:45:37 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:25:19 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*find_newline_into_line(char *read_part)
 	if (!line)
 	{
 		free(read_part);
-		return (NULL);
+		exit(1);
 	}
 	i = 0;
 	while (read_part[i] != '\n' && read_part[i])

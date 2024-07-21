@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 19:39:29 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/14 19:43:15 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/21 14:10:08 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	swap_position_to_rasengan(t_info *info)
 	else
 		return ;
 	i = 0;
-	while (i < 1000000)
+	while (i < 10000000)
 		i++;
 	put_image_to_window(info, info->map_info.map);
 	info->rasengan_x++;

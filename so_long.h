@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:34 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/17 19:23:30 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:35:48 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ typedef enum s_type
 #  define BUFFER_SIZE 4
 # endif
 
-# define PLAYER_IMAGE "/Users/rishibas/Downloads/naruto.xpm"
-# define EXIT_IMAGE "/Users/rishibas/Downloads/kaidan_down_stone-_1_.xpm"
-# define ITEM_IMAGE "/Users/rishibas/Downloads/ramen_grass.xpm"
-# define TILE_IMAGE "/Users/rishibas/Downloads/pattern_shibafu-_1_.xpm"
-# define WALL_IMAGE "/Users/rishibas/Downloads/AnyConv.com__rengabusu (1).xpm"
-# define RASENGAN_IMAGE "/Users/rishibas/Downloads/螺旋丸_shibafu.xpm"
+# define PLAYER_IMAGE "textures/naruto.xpm"
+# define EXIT_IMAGE "textures/kaidan_down_stone-_1_.xpm"
+# define ITEM_IMAGE "textures/ramen_grass.xpm"
+# define TILE_IMAGE "textures/pattern_shibafu-_1_.xpm"
+# define WALL_IMAGE "textures/AnyConv.com__rengabusu (1).xpm"
+# define RASENGAN_IMAGE "textures/螺旋丸_shibafu.xpm"
 
 # define KEY_W 119
 # define KEY_D 100

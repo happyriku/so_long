@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:09:54 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/17 20:11:05 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:53:10 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int	get_map_lines(int fd, t_info *info, t_list **lst)
 	line[i] = '\0';
 	new_node = ft_lstnew(line);
 	if (!new_node)
+	{
+		free(line);
 		return (TYPE_FAILED);
+	}
 	ft_lstadd_back(lst, new_node);
 	return (TYPE_SUCESS);
 }
@@ -101,19 +104,13 @@ void	create_map(t_info *info, char *map_name)
 	lst = NULL;
 	fd = open(map_name, O_RDONLY);
 	if (fd == TYPE_FAILED)
-	{
-		ft_printf("open function is Error\n");
-		return ;
-	}
+		print_error(info, "open function is Error\n");
 	make_list_from_map_lines(fd, info, &lst);
 	check_map_is_empty(lst);
 	info->map_info.height = ft_lstsize(lst);
 	info->map_info.width = ft_strlen(lst->content);
 	if (info->map_info.height >= 89 || info->map_info.width >= 89)
-	{
-		ft_printf("The map is too big\n");
-		exit(1);
-	}
+		print_error(info, "The map is too big\n");
 	info->map_info.map = create_map_from_list(info, lst);
 	check_map_is_correct(info, lst);
 	close(fd);

@@ -6,7 +6,7 @@
 /*   By: rishibas <rishibas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 20:24:12 by rishibas          #+#    #+#             */
-/*   Updated: 2024/07/17 17:36:54 by rishibas         ###   ########.fr       */
+/*   Updated: 2024/07/21 12:52:56 by rishibas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	check_map_is_rectangle(t_info *info, t_list *lst)
 {
-	int	i;
-
-	i = 0;
 	while (ft_strlen(lst->content) == info->map_info.width)
 	{
 		if (lst->next == NULL)
@@ -24,7 +21,6 @@ void	check_map_is_rectangle(t_info *info, t_list *lst)
 			return ;
 		}
 		lst = lst->next;
-		i++;
 	}
 	ft_lstclear(&lst, free);
 	print_error(info, "Map is not rectangle");
